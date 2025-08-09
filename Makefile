@@ -23,11 +23,11 @@ endif
 #        Mandatory configuration       #
 ########################################
 # Application name
-APPNAME = "Boilerplate"
+APPNAME = "Xelis"
 
 # Application version
-APPVERSION_M = 2
-APPVERSION_N = 2
+APPVERSION_M = 0
+APPVERSION_N = 0
 APPVERSION_P = 2
 APPVERSION = "$(APPVERSION_M).$(APPVERSION_N).$(APPVERSION_P)"
 
@@ -72,7 +72,7 @@ VARIANT_PARAM = COIN
 VARIANT_VALUES = BOL
 
 # Enabling DEBUG flag will enable PRINTF and disable optimizations
-#DEBUG = 1
+DEBUG = 0#1
 
 ########################################
 #     Application custom permissions   #
@@ -104,6 +104,11 @@ ENABLE_NBGL_QRCODE = 1
 ########################################
 ifeq ($(APPNAME), "Boilerplate")
 ENABLE_TESTING_SWAP = 1
+endif
+
+# for testing private key / address / seed stuff
+ifeq ($(TARGET),speculos)
+    CFLAGS += -DDEV_MODE
 endif
 
 ########################################

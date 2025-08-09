@@ -1,0 +1,23 @@
+{
+  "name": "ledger-app-xelis-dev",
+  "image": "ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "vadimcn.vscode-lldb",
+        "ms-vscode.makefile-tools"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"
+  ],
+  "remoteUser": "root",
+  "features": {},
+  "containerEnv": {},
+  "postCreateCommand": "",
+  "updateRemoteUserUID": true
+}

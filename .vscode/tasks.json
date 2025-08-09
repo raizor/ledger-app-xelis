@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build: NanoSP",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "BOLOS_SDK=/opt/nanosplus-secure-sdk"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "detail": "Build the Ledger app for NanoSP"
+    },
+    {
+      "label": "Build: NanoX",
+      "type": "shell",
+      "command": "make",
+      "args": [
+        "BOLOS_SDK=/opt/nanox-secure-sdk"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],      
+      "detail": "Build the Ledger app for NanoX"
+    } 
+  ]
+}

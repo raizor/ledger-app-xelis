@@ -7,7 +7,13 @@
             "name": "Nano S+",
             "includePath": [
                 "${workspaceFolder}/src/**",
-                "${env:BOLOS_SDK}/**"
+                "${env:BOLOS_SDK}/**",
+                "${env:BOLOS_SDK}/include",          // SDK root headers
+                "/usr/include",
+                "/usr/lib/gcc/x86_64-linux-gnu/12/include", // adjust to match your GCC version
+                "/usr/include/linux",
+                "/usr/include/c++/12",                      // or whatever version you're using
+                "/usr/include/x86_64-linux-gnu" 
             ],
             "defines": [
                 "TARGET_NANOS2",
@@ -30,7 +36,9 @@
                 "DEBUG=1",
                 "HAVE_PIEZO_SOUND",
                 "HAVE_PRINTF",
-                "PRINTF=screen_printf"
+                "PRINTF=screen_printf",
+                "__STDC_LIMIT_MACROS",      
+                "__STDC_CONSTANT_MACROS" 
             ],
             "cStandard": "c11",
             "cppStandard": "c++17",
